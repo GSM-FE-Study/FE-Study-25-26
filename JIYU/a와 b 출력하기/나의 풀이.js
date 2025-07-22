@@ -7,13 +7,12 @@ const rl = readline.createInterface({
 let input = [];
 
 rl.on('line', function (line) {
-    input = [line];
-    rl.close(); 
+    input = line.split(' ');
 }).on('close', function () {
-    const str = input[0];
     
-    if (str.length < 1 || str.length > 1000000) return;
-    if (str.includes(' ')) return;
-
-    console.log(str);
+    if(Number(input[0])<-100000)return;
+    if(Number(input[1])>100000)return;
+    
+    console.log('a =', Number(input[0]));
+    console.log('b =', Number(input[1]));
 });
